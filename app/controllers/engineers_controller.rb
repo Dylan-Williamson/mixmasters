@@ -9,11 +9,11 @@ class EngineersController < ApplicationController
     end
 
     def create
-        Engineer.create(engineer_params)
+        @engineer = Engineer.create(engineer_params)
     end
 
     private
-    
+
     def engineer_params
         params.require(:engineer).permit(:name, :username, :location, :experience, :bio)
     end
