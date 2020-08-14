@@ -4,6 +4,7 @@ class CreateServices < ActiveRecord::Migration[6.0]
       t.string :title
       t.string :description
       t.integer :price
+      t.integer :rating
       t.text :requirements
 
       t.timestamps

@@ -4,7 +4,7 @@ class CreateEngineers < ActiveRecord::Migration[6.0]
       t.string :username
       t.string :name
       t.string :location
-      t.string :rating
+      t.integer :rating
       t.text :bio
       t.string :experience
 
