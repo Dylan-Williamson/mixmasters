@@ -12,6 +12,10 @@ class ServicesController < ApplicationController
         @service = Service.find(params[:id])
     end
 
+    def edit
+        @service = Service.find(params[:id])
+    end
+
     def create
         @service = Service.create(service_params)
         redirect_to @service
