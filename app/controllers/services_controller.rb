@@ -1,4 +1,6 @@
 class ServicesController < ApplicationController
+    
+    before_action :find_service, only: [:show, :edit, :update, :destroy]
 
     def new
         @service = Service.new
@@ -9,15 +11,12 @@ class ServicesController < ApplicationController
     end
 
     def show
-        find_service
     end
 
     def edit
-        find_service
     end
 
     def update
-        find_service
         @service.update(service_params)
         redirect_to @service
     end
@@ -28,7 +27,6 @@ class ServicesController < ApplicationController
     end
 
     def destroy
-        find_service
         @service.destroy
         redirect_to services_path
     end
