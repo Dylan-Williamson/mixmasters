@@ -1,0 +1,11 @@
+<%= form_for @service do |f| %>
+    <label for="title">Title:</label><br>
+    <%= f.text_field :title %><br><br>
+    <label for="description">Description:</label><br>
+    <%= f.text_field :description %><br><br>
+    <label for="requirements">Buyer Requirements:</label><br>
+    <%= f.text_field :requirements %><br><br>
+    <label for="price">Price:</label><br>
+    <%= f.number_field :price %><br><br>
+    <%= f.submit %>
+<% end %>
