@@ -16,6 +16,12 @@ class EngineersController < ApplicationController
         @engineer = Engineer.find(params[:id])
     end
 
+    def update
+        @engineer = Engineer.find(params[:id])
+        @engineer.update(engineer_params)
+        redirect_to @engineer
+    end
+
     def create
         @engineer = Engineer.create(engineer_params)
     end
