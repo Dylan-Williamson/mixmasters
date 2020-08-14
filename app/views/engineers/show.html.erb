@@ -1,2 +1,4 @@
-<h1><%= @engineer.name %></h1>
+<h1><%= @engineer.name %> (@<%= @engineer.username %>)</h1>
+<h2>Experience: <%= @engineer.experience.capitalize %></h2>
+<h4>Location: <%= @engineer.location %></h4>
 <h3> <%= '⭐️' *@engineer.rating %></h3>
