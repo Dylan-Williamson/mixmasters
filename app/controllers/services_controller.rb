@@ -1,5 +1,9 @@
 class ServicesController < ApplicationController
 
+    def new
+        @service = Service.new
+    end
+
     def index
         @services = Service.all
     end
