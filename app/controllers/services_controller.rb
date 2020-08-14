@@ -27,6 +27,12 @@ class ServicesController < ApplicationController
         redirect_to @service
     end
 
+    def destroy
+        @service = Service.create(service_params)
+        @service.destroy
+        redirect_to services_path
+    end
+
     private
 
     def service_params
