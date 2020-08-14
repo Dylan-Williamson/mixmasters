@@ -2,3 +2,4 @@
 <h2>Experience: <%= @engineer.experience.capitalize %></h2>
 <h4>Location: <%= @engineer.location %></h4>
 <h3> <%= '⭐️' *@engineer.rating %></h3>
+<%= button_to 'Delete', @engineer, method: :delete %>
