@@ -9,7 +9,7 @@ class ServicesController < ApplicationController
     end
 
     def create
-        Service.create(service_params)
+        @service = Service.create(service_params)
     end
 
     private
