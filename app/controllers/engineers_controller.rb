@@ -5,7 +5,7 @@ class EngineersController < ApplicationController
     end
 
     def show
-
+        @engineer = Engineer.find(params[:id])
     end
 
     
