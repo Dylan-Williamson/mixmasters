@@ -8,5 +8,8 @@ class EngineersController < ApplicationController
         @engineer = Engineer.find(params[:id])
     end
 
+    def create
+
+    end
     
 end
