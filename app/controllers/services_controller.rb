@@ -11,4 +11,10 @@ class ServicesController < ApplicationController
     def create
 
     end
+
+    private
+
+    def service_params
+        params.require(:service).permit(:title, :description, :requirements, :price)
+    end
 end
