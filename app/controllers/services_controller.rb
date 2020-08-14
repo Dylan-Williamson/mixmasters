@@ -14,6 +14,7 @@ class ServicesController < ApplicationController
 
     def create
         @service = Service.create(service_params)
+        redirect_to @service
     end
 
     private
