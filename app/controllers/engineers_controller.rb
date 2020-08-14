@@ -11,5 +11,9 @@ class EngineersController < ApplicationController
     def create
 
     end
+
+    def engineer_params
+        params.require(:engineer).permit(:name, :username, :location, :experience, :bio)
+    end
     
 end
