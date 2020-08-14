@@ -1,5 +1,7 @@
 class EngineersController < ApplicationController
 
+    before_action :find_engineer, only: [:show, :edit, :update, :destroy]
+
     def new
         @engineer = Engineer.new
     end
@@ -9,15 +11,12 @@ class EngineersController < ApplicationController
     end
     
     def show
-        find_engineer
     end
     
     def edit
-        find_engineer
     end
 
     def update
-        find_engineer
         @engineer.update(engineer_params)
         redirect_to @engineer
     end
@@ -27,7 +26,6 @@ class EngineersController < ApplicationController
     end
 
     def destroy
-        find_engineer
         @engineer.destroy
         redirect_to services_path
     end
