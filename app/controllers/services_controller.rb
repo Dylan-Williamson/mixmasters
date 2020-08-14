@@ -8,5 +8,7 @@ class ServicesController < ApplicationController
         @service = Service.find(params[:id])
     end
 
-    
+    def create
+
+    end
 end
