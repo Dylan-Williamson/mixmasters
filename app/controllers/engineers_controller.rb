@@ -1,5 +1,9 @@
 class EngineersController < ApplicationController
 
+    def new
+        @engineer = Engineer.new
+    end
+
     def index
         @engineers = Engineer.all
     end
