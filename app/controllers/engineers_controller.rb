@@ -9,15 +9,15 @@ class EngineersController < ApplicationController
     end
     
     def show
-        @engineer = Engineer.find(params[:id])
+        find_engineer
     end
     
     def edit
-        @engineer = Engineer.find(params[:id])
+        find_engineer
     end
 
     def update
-        @engineer = Engineer.find(params[:id])
+        find_engineer
         @engineer.update(engineer_params)
         redirect_to @engineer
     end
@@ -27,7 +27,7 @@ class EngineersController < ApplicationController
     end
 
     def destroy
-        @engineer = Engineer.create(engineer_params)
+        find_engineer
         @engineer.destroy
         redirect_to services_path
     end
@@ -36,6 +36,10 @@ class EngineersController < ApplicationController
 
     def engineer_params
         params.require(:engineer).permit(:name, :username, :location, :experience, :bio)
+    end
+
+    def find_engineer
+        @engineer = Engineer.find(params[:id])
     end
     
 end
