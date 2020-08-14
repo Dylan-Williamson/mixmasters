@@ -1,0 +1,11 @@
+<h1>Publish A New Service!</h1>
+<%= form_tag '/services', method: :post %>
+    <label for="title">Title:</label><br>
+    <%= text_field_tag 'service[title]' %><br><br>
+    <label for="description">Description:</label><br>
+    <%= text_field_tag 'service[description]' %><br><br>
+    <label for="requirements">Requirements:</label><br>
+    <%= text_field_tag 'service[requirements]' %><br><br>
+    <label for="price">Price:</label><br>
+    <%= number_field_tag 'service[price]' %><br><br>
+    <input type="submit" value="Publish">
