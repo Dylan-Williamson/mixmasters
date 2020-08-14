@@ -9,15 +9,15 @@ class ServicesController < ApplicationController
     end
 
     def show
-        @service = Service.find(params[:id])
+        find_service
     end
 
     def edit
-        @service = Service.find(params[:id])
+        find_service
     end
 
     def update
-        @service = Service.find(params[:id])
+        find_service
         @service.update(service_params)
         redirect_to @service
     end
@@ -28,7 +28,7 @@ class ServicesController < ApplicationController
     end
 
     def destroy
-        @service = Service.create(service_params)
+        find_service
         @service.destroy
         redirect_to services_path
     end
@@ -37,5 +37,9 @@ class ServicesController < ApplicationController
 
     def service_params
         params.require(:service).permit(:title, :description, :requirements, :price)
+    end
+
+    def find_service
+        @service = Service.find(params[:id])
     end
 end
