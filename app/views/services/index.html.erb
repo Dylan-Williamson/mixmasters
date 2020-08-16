@@ -1,24 +1,19 @@
 <h1>MixMasters Premier Audio Services</h1>
 
+<% if false  %>
 <ul>
     <% @services.each do |service| %>
         <li>$<%= service.price %> <%= link_to service.title, service %> - <%= service.engineer.name %></li>
     <% end %>
 
 </ul>
+<% end %>
 
 <dl>
     <% @services.each do |service| %>
         <dt>$<%= service.price %> <%= link_to service.title, service %></dt>
-        <dd><%= service.engineer.name %></dd>
+        <dd>-<%= service.description %></dd><br>
     <% end %>
 
 </dl>
 
-
-<dl>
-  <dt>Coffee</dt>
-  <dd>- black hot drink</dd>
-  <dt>Milk</dt>
-  <dd>- white cold drink</dd>
-</dl>
