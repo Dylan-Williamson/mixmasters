@@ -1,3 +1,3 @@
 class Service < ApplicationRecord
-    # belongs_to :engineer
+    belongs_to :engineer
 end
