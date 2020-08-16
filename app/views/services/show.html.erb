@@ -1,3 +1,11 @@
-<h1><%= @service.title %></h1>
+<h1><%= @service.title %> $<%= @service.price %></h1>
+
+<ul>
+    <%= link_to @service.engineer.name, @service.engineer %><br><br>
+    Description: <br>
+    <%= @service.description %><br><br>
+    Buyer Requirements: <br>
+    <%= @service.requirements %>
+<ul><br>
 
 <%= button_to 'Delete', @service, method: :delete %>
