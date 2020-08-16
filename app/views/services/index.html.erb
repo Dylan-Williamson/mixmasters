@@ -2,7 +2,23 @@
 
 <ul>
     <% @services.each do |service| %>
-        <h3><%= link_to service.title, service %></h3>
+        <li>$<%= service.price %> <%= link_to service.title, service %> - <%= service.engineer.name %></li>
     <% end %>
 
 </ul>
+
+<dl>
+    <% @services.each do |service| %>
+        <dt>$<%= service.price %> <%= link_to service.title, service %></dt>
+        <dd><%= service.engineer.name %></dd>
+    <% end %>
+
+</dl>
+
+
+<dl>
+  <dt>Coffee</dt>
+  <dd>- black hot drink</dd>
+  <dt>Milk</dt>
+  <dd>- white cold drink</dd>
+</dl>
