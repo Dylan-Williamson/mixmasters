@@ -4,6 +4,7 @@ class ServicesController < ApplicationController
 
     def new
         @service = Service.new
+        render 'new'
     end
 
     def index
