@@ -4,6 +4,7 @@ class EngineersController < ApplicationController
 
     def new
         @engineer = Engineer.new
+        render 'new'
     end
     
     def index
