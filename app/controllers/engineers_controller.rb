@@ -8,6 +8,7 @@ class EngineersController < ApplicationController
     
     def index
         @engineers = Engineer.all
+        render 'index'
     end
     
     def show
