@@ -1,0 +1,8 @@
+<h1>MixMasters Premier Audio Services</h1>
+
+<ul>
+    <% @services.each do |service| %>
+        <h3><%= link_to service.title, service %></h3>
+    <% end %>
+
+</ul>
