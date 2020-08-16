@@ -13,6 +13,7 @@ class EngineersController < ApplicationController
     end
     
     def show
+        @services = @engineer.services
         render 'show'
     end
     

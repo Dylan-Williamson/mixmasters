@@ -1,5 +1,22 @@
 <h1><%= @engineer.name %> (@<%= @engineer.username %>) ✔</h1>
-<h2>Experience: <%= @engineer.experience.capitalize %></h2>
+<h3>Experience: <%= @engineer.experience.capitalize %></h3>
 <h4>Location: <%= @engineer.location %></h4>
-<h3> <%= '⭐️' *@engineer.rating %></h3>
-<%= button_to 'Delete', @engineer, method: :delete %>
+<% if @engineer.rating != nil %>
+    <h3> <%= '⭐️' *@engineer.rating %></h3>
+<% else %>
+    <h5>Not Yet Rated</h5>
+<% end %>
+
+<h3>Bio: </h3>
+<p><%= @engineer.bio %></p><br>
+
+<h2>Services:</h3>
+<dl>
+    <% @services.each do |service| %>
+        <dt>$<%= service.price %> <%= link_to service.title, service %></dt>
+        <dd>-<%= service.description %></dd><br>
+    <% end %>
+
+</dl>
+
+<%= button_to 'Delete Account', @engineer, method: :delete %>
