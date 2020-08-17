@@ -1,0 +1,15 @@
+-------------------- Auto-Git Log --------------------
+		Mon Aug 17 2020 09:06:17 GMT-0400 (Eastern Daylight Time)
+------------------------------------------------------
+
+Modified files:
+* config/routes.rb
+
+
+Created files:
+
+
+Deleted files:
+
+
+Renamed files:
