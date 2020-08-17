@@ -1,8 +1,9 @@
 <h1>MixMasters</h1>
 <h3>Know an engineer? Go and send 'em here!</h3>
 
-<ul>
+<dl>
 <% @engineers.each do |engineer| %>
-    <li><%= link_to engineer.name, engineer %></li>
+    <dt><%= link_to engineer.name, engineer %></dt>
+    <dd>- <%= engineer.location %></dd>
 <% end %>
-</ul>
+</dl>
