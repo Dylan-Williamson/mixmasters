@@ -7,16 +7,25 @@
     <h5>Not Yet Rated</h5>
 <% end %>
 
-<h3>Bio: </h3>
+<h3>Bio </h3>
 <p><%= @engineer.bio %></p>
 <%= link_to 'Edit Account', edit_engineer_path %>
 <%= button_to 'Delete Account', @engineer, method: :delete %>
 
-<h2>Services:</h3>
+<h2>Services</h3>
 <dl>
     <% @services.each do |service| %>
         <dt>$<%= service.price %> <%= link_to service.title, service %></dt>
         <dd>-<%= service.description %></dd><br>
+    <% end %>
+
+</dl>
+
+<h2>Orders</h2>
+<dl>
+    <% @engineer.orders.each do |order| %>
+        <dt><%= link_to order.service[:title], order %></dt>
+        <dd>@<%= order.client[:username] %></dd><br>
     <% end %>
 
 </dl>
