@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :orders, only: [:create, :update, :show]
+  resources :orders, only: [:create, :update, :index, :show]
   resources :clients, except: [:new, :index]
   resources :services
   resources :engineers
