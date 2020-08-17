@@ -5,3 +5,5 @@ Service.create(title: "Multi-Track Mixing", description: "Professional quality m
 Client.create(username: "joeexotic")
 
 Order.create(engineer_id: 1, service_id: 1, client_id: 1)
+
+Review.create(engineer_id: 1, service_id: 1, client_id: 1, order_id: 1, content: "Absolutely Great Service! 10/10 I will certainly be back again!", rating: 5)
