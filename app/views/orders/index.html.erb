@@ -1,0 +1,9 @@
+<h1>Order History</h1>
+
+<dl>
+    <% @orders.each do |order| %>
+        <dt>$<%= order.service[:price] %> <%= link_to order.service[:title], order %></dt>
+        <dd>-<%= order.service[:description] %></dd><br>
+    <% end %>
+
+</dl>
