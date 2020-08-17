@@ -10,6 +10,11 @@ class OrdersController < ApplicationController
         redirect_to @order
     end
 
+    def index
+        @orders = Order.all
+        render 'index'
+    end
+
     def show
         render 'show'
     end
