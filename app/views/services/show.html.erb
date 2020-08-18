@@ -2,11 +2,19 @@
 
 <ul>
     <%= link_to @service.engineer.name, @service.engineer %><br><br>
-    <h3>Description: </h3>
+    <h3>Description </h3>
     <%= @service.description %><br><br>
-    <h3>Buyer Requirements: </h3>
+    <h3>Buyer Requirements </h3>
     <%= @service.requirements %>
-<ul><br>
+</ul><br>
 
+<ul>
+    <h3>Reviews</h3>
+    <% if @service.reviews %>
+    <% @service.reviews.each do |review| %>
+    <li><%= review.rating.times "⭐️" %></li>
+    <% end %>
+
+</ul>
 <%= link_to 'Edit Service', edit_service_path %>
 <%= button_to 'Delete', @service, method: :delete %>
