@@ -11,10 +11,11 @@
 <ul>
     <h3>Reviews</h3>
     <% if @service.reviews %>
-    <% @service.reviews.each do |review| %>
-    <li><%= review.rating.times "⭐️" %></li>
+        <% @service.reviews.each do |review| %>
+            <%= "⭐️" * review.rating.to_i %> -@<%= review.client[:username] %></li>
+            <li><%= review.content %></li><br>
+        <% end %>
     <% end %>
-
 </ul>
 <%= link_to 'Edit Service', edit_service_path %>
 <%= button_to 'Delete', @service, method: :delete %>
