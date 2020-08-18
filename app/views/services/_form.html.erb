@@ -6,6 +6,6 @@
     <label for="requirements">Buyer Requirements:</label><br>
     <%= f.text_field :requirements %><br><br>
     <label for="price">Price:</label><br>
-    <%= f.number_field :price %><br><br>
+    <%= f.number_field :price, in:(1..10000) %><br><br>
     <%= f.submit %>
 <% end %>
