@@ -1,0 +1,15 @@
+-------------------- Auto-Git Log --------------------
+		Tue Aug 18 2020 08:53:23 GMT-0400 (Eastern Daylight Time)
+------------------------------------------------------
+
+Modified files:
+* app/views/services/show.html.erb
+
+
+Created files:
+
+
+Deleted files:
+
+
+Renamed files:

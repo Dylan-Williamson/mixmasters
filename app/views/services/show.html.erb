@@ -12,7 +12,7 @@
     <h3>Reviews</h3>
     <% if @service.reviews %>
         <% @service.reviews.each do |review| %>
-            <%= "⭐️☆" * review.rating.to_i %> -@<%= review.client[:username] %></li>
+            <%= "★" * review.rating.to_i %><%= "☆" * (5 - review.rating.to_i) %> -@<%= review.client[:username] %></li>
             <li><%= review.content %></li><br>
         <% end %>
     <% end %>
