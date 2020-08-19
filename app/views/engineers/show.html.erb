@@ -2,7 +2,7 @@
 <h3>Experience: <%= @engineer.experience.capitalize %></h3>
 <h4>Location: <%= @engineer.location %></h4>
 <% if @engineer.rating != nil %>
-    <h3> <%= '⭐️' *@engineer.rating %></h3>
+    <h3> <%= '★'*@engineer.rating %><%= '☆'*(5 - @engineer.rating) %></h3>
 <% else %>
     <h5>Not Yet Rated</h5>
 <% end %>
