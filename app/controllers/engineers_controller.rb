@@ -28,6 +28,7 @@ class EngineersController < ApplicationController
 
     def create
         @engineer = Engineer.create(engineer_params)
+        redirect_to @engineer
     end
 
     def destroy

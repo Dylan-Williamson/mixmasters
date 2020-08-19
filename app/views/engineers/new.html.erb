@@ -1,0 +1,14 @@
+<%= form_for @engineer do |f| %>
+    <label for="username">Username:</label><br>
+    <%= f.text_field :username %><br><br>
+    <label for="name">Legal Name:</label><br>
+    <%= f.text_field :name %><br><br>
+    <label for="location">Location (City, State):</label><br>
+    <%= f.text_field :location %><br><br>
+    <label for="bio">Bio:</label><br>
+    <%= f.text_field :bio %><br><br>
+    <label for ="experience">Experience:</label><br>
+    <%= f.select :experience, [['Intermediate', 'intermediate'],['Moderate', 'moderate'],['Expert', 'expert']] %><br><br>
+
+    <%= f.submit %>
+<% end %>
