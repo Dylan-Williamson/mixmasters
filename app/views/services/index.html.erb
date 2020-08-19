@@ -2,7 +2,7 @@
 
 <dl>
     <% @services.each do |service| %>
-        <dt>$<%= service.price %> <%= link_to service.title, service %></dt>
+        <dt>$<%= service.price %> <%= link_to service.title, service %> (@<%= @link_to service.engineer.username, service.engineer %>)</dt>
         <dd>-<%= service.description %></dd><br>
     <% end %>
 
