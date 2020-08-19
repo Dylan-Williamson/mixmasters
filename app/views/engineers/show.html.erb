@@ -12,7 +12,7 @@
 <%= link_to 'Edit Account', edit_engineer_path %>
 <%= button_to 'Delete Account', @engineer, method: :delete %>
 
-<h2>Services</h3>
+<h2>Services (<%= @services.count %>)</h3>
 <% if @services.present? %>
     <dl>
         <% @services.each do |service| %>
@@ -25,7 +25,7 @@
     <p>Nothing here yet!</p>
 <% end %>
 
-<h2>Orders</h2>
+<h2>Orders (<%= @engineer.orders.count %>)</h2>
 <% if @engineer.orders.present? %>
     <dl>
         <% @engineer.orders.each do |order| %>
