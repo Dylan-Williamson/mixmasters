@@ -13,13 +13,17 @@
 <%= button_to 'Delete Account', @engineer, method: :delete %>
 
 <h2>Services</h3>
-<dl>
-    <% @services.each do |service| %>
-        <dt>$<%= service.price %> <%= link_to service.title, service %></dt>
-        <dd>-<%= service.description %></dd><br>
-    <% end %>
+<% if @services != [] %>
+    <dl>
+        <% @services.each do |service| %>
+            <dt>$<%= service.price %> <%= link_to service.title, service %></dt>
+            <dd>-<%= service.description %></dd><br>
+        <% end %>
 
-</dl>
+    </dl>
+<% else %>
+    <p>Nothing here yet!</p>
+<% end %>
 
 <h2>Orders</h2>
 <dl>
