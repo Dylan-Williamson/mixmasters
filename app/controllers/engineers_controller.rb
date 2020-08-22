@@ -39,7 +39,7 @@ class EngineersController < ApplicationController
     private
 
     def engineer_params
-        params.require(:engineer).permit(:name, :username, :location, :experience, :bio)
+        params.require(:engineer).permit(:name, :username, :location, :experience, :bio, :password, :password_confirmation)
     end
 
     def find_engineer
