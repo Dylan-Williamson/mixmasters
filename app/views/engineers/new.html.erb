@@ -1,13 +1,17 @@
 <%= form_for @engineer do |f| %>
-    <label for="username">Username:</label><br>
+    <%= f.label :username %><br>
     <%= f.text_field :username %><br><br>
-    <label for="name">Legal Name:</label><br>
+    <%= f.label :password %><br>
+    <%= f.password_field :password %><br><br>
+    <%= f.label :password_confirmation, "Confirm Password" %><br>
+    <%= f.password_field :password_confirmation %><br><br>
+    <%= f.label :name, "Legal Name" %><br>
     <%= f.text_field :name %><br><br>
-    <label for="location">Location (City, State):</label><br>
+    <%= f.label :location, "Location (City, State)" %><br>
     <%= f.text_field :location %><br><br>
-    <label for="bio">Bio:</label><br>
+    <%= f.label :bio %><br>
     <%= f.text_field :bio %><br><br>
-    <label for ="experience">Experience:</label><br>
+    <%= f.label :experience %><br>
     <%= f.select :experience, [['Intermediate', 'intermediate'],['Moderate', 'moderate'],['Expert', 'expert']] %><br><br>
 
     <%= f.submit %>
