@@ -1,6 +1,10 @@
 class ClientsController < ApplicationController
     before_action :find_client, only: [:edit, :update, :show, :destroy]
 
+    def new
+        @client = Client.new
+    end
+    
     def create
         @client = Client.create(client_params)
     end
