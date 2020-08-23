@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <html>
+  <nav>
+  </nav>
   <head>
     <title>Mixmasters</title>
     <%= csrf_meta_tags %>
@@ -17,6 +19,7 @@
     <% end %>
   </ul>
   <% end %>
+    <%= render 'layouts/nav' %>
     <%= yield %>
   </body>
 </html>
