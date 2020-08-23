@@ -1,5 +1,5 @@
 class EngineersController < ApplicationController
-
+    skip_before_action :authorized, only: [:new, :create]
     before_action :find_engineer, only: [:show, :edit, :update, :destroy]
 
     def new
