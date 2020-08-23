@@ -26,6 +26,7 @@ class SessionsController < ApplicationController
   def create_with_google_omniauth
     omniauth = request.env['omniauth.auth']
       user = User.find_or_create_by(email: omniauth['info']['email']) do |u|
+        byebug
         u.username = omniauth['info']['email']
         u.password = SecureRandom.hex
       end
