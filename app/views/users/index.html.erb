@@ -1,0 +1,9 @@
+<h1>MixMasters</h1>
+<h3>Know an engineer? Go and send 'em here!</h3>
+
+<dl>
+<% @users.each do |user| %>
+    <dt><%= link_to user.name, user %></dt>
+    <dd>- <%= user.location %></dd>
+<% end %>
+</dl>

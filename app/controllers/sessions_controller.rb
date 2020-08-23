@@ -8,8 +8,8 @@ class SessionsController < ApplicationController
   end
 
   def create
-    engineer = Engineer.find_by(username: params[:username])
-    if engineer && engineer.authenticate(params[:password])
+    user = User.find_by(username: params[:username])
+    if user && user.authenticate(params[:password])
       session[:user_id] = user.id
       redirect_to services_path
     else

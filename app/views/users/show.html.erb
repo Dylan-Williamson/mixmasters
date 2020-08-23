@@ -1,16 +1,16 @@
-<h1><%= @engineer.name %> (@<%= @engineer.username %>) ✔</h1>
-<h3>Experience: <%= @engineer.experience.capitalize %></h3>
-<h4>Location: <%= @engineer.location %></h4>
-<% if @engineer.rating != nil %>
-    <h3> <%= '★'*@engineer.rating %><%= '☆'*(5 - @engineer.rating) %></h3>
+<h1><%= @user.name %> (@<%= @user.username %>) ✔</h1>
+<h3>Experience: <%= @user.experience.capitalize %></h3>
+<h4>Location: <%= @user.location %></h4>
+<% if @user.rating != nil %>
+    <h3> <%= '★'*@user.rating %><%= '☆'*(5 - @user.rating) %></h3>
 <% else %>
     <h5>Not Yet Rated</h5>
 <% end %>
 
 <h3>Bio </h3>
-<p><%= @engineer.bio %></p>
-<%= link_to 'Edit Account', edit_engineer_path %>
-<%= button_to 'Delete Account', @engineer, method: :delete %>
+<p><%= @user.bio %></p>
+<%= link_to 'Edit Account', edit_user_path %>
+<%= button_to 'Delete Account', @user, method: :delete %>
 
 <h2>Services (<%= @services.count %>)</h3>
 <% if @services.present? %>
@@ -25,10 +25,10 @@
     <p>Nothing here yet!</p>
 <% end %>
 
-<h2>Orders (<%= @engineer.orders.count %>)</h2>
-<% if @engineer.orders.present? %>
+<h2>Orders (<%= @user.orders.count %>)</h2>
+<% if @user.orders.present? %>
     <dl>
-        <% @engineer.orders.each do |order| %>
+        <% @user.orders.each do |order| %>
             <dt><%= link_to order.service[:title], order %></dt>
             <dd>@<%= order.client[:username] %></dd><br>
         <% end %>

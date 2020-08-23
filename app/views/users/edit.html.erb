@@ -1,4 +1,4 @@
-<%= form_for @engineer do |f| %>
+<%= form_for @user do |f| %>
     <%= f.label :username %><br>
     <%= f.text_field :username %><br><br>
     <%= f.label :password %><br>
@@ -9,10 +9,11 @@
     <%= f.text_field :name %><br><br>
     <%= f.label :location, "Location (City, State)" %><br>
     <%= f.text_field :location %><br><br>
-    <%= f.label :bio %><br>
-    <%= f.text_field :bio %><br><br>
-    <%= f.label :experience %><br>
-    <%= f.select :experience, [['Intermediate', 'intermediate'],['Moderate', 'moderate'],['Expert', 'expert']] %><br><br>
-
-    <%= f.submit "Create Account" %>
+    <%= f.text_area :bio %>
+    <%= f.submit "Update Account" %>
 <% end %>
+    
+    <% if false %>
+        <%= f.label :bio %><br>
+        <%= f.text_field :bio %><br><br>
+    <% end %>
