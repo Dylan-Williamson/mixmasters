@@ -1,5 +1,4 @@
 <h1><%= @user.name %> (@<%= @user.username %>) ✔</h1>
-<h3>Experience: <%= @user.experience.capitalize %></h3>
 <h4>Location: <%= @user.location %></h4>
 <% if @user.rating != nil %>
     <h3> <%= '★'*@user.rating %><%= '☆'*(5 - @user.rating) %></h3>
@@ -30,7 +29,7 @@
     <dl>
         <% @user.orders.each do |order| %>
             <dt><%= link_to order.service[:title], order %></dt>
-            <dd>@<%= order.client[:username] %></dd><br>
+            <dd>-<%= order.service.price %></dd><br>
         <% end %>
     </dl>
 <% else %>

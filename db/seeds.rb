@@ -1,4 +1,4 @@
-User.create(name: "Dylan Williamson", username: "dylwill", password: "password", location: "Saratoga Springs, NY", bio: "New York based Mixing and Mastering Engineer.")
+User.create(name: "Dylan Williamson", username: "dylwill", location: "Saratoga Springs, NY", bio: "New York based Mixing and Mastering Engineer.")
 
 Service.create(title: "Multi-Track Mixing", description: "Professional quality multi-track mixing.", price: 250, requirements: "Pro Tools Session ZIPPED", user_id: 1)
 
