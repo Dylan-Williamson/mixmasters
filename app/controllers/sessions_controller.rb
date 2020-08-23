@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
 
       redirect_to services_path
     else
-      flash[:errors] = "Invalid Credentials"
+      flash[:errors] = ["Invalid Credentials"]
       redirect_to login_path
     end
   end
