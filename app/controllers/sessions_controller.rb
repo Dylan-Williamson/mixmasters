@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
   def create
     engineer = Engineer.find_by(username: params[:username])
     if engineer && engineer.authenticate(params[:password])
-
+      session[:user_id] = user.id
       redirect_to services_path
     else
       flash[:errors] = ["Invalid Credentials"]

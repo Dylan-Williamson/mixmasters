@@ -28,6 +28,7 @@ class EngineersController < ApplicationController
 
     def create
         @engineer = Engineer.create(engineer_params)
+        session[:user_id] = @user.id
         redirect_to @engineer
     end
 

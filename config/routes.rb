@@ -6,5 +6,6 @@ Rails.application.routes.draw do
   resources :clients, except: [:index]
   resources :services
   resources :engineers
+  resources :reviews, only: [:create]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
