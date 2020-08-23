@@ -20,10 +20,16 @@ class SessionsController < ApplicationController
 
   def destroy
     session[:user_id] = nil
-    redirect_to login_path
+    redirect_to login_path  
   end
 
   def create_with_google_omniauth
-
+    omniauth = request.env['omniauth.auth']
+      user = User.find_or_create_by(email: omniauth['info']['email']) do |u|
+        u.username = omniauth['info']['email']
+        u.password = SecureRandom.hex
+      end
+    session[:user_id] = user.id
+    redirect_to services_path
   end
 end
