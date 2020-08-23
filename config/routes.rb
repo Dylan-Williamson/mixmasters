@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get '/auth/google_oauth2/callback', to: "sessions#create_with_googel_omniauth"
   get '/login', to: "sessions#new", as: "/login"
   post '/sessions', to: "sessions#create", as: "sessions"
   get '/sessions', to: "sessions#destroy"

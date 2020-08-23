@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-  skip_before_action :authorized, only: [:new, :create]
+  skip_before_action :authorized, only: [:new, :create, :create_with_google_omniauth]
 
   def new
     if logged_in?
@@ -21,5 +21,9 @@ class SessionsController < ApplicationController
   def destroy
     session[:user_id] = nil
     redirect_to login_path
+  end
+
+  def create_with_google_omniauth
+
   end
 end
