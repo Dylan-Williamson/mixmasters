@@ -1,21 +1,11 @@
 <h1>Order #<%= @order.id %></h1>
 
-<h1><%= @order.service.title %> $<%= @order.service.price %></h1>
+<h1><%= @order.service.title %></h1>
 
 <ul>
-    <%= link_to @order.service.user.name, @order.service.user %><br><br>
+    <%= link_to @order.service.user.username, @order.service.user %><br><br>
     <h3>Description </h3>
     <%= @order.service.description %><br><br>
     <h3>Buyer Requirements </h3>
     <%= @order.service.requirements %>
 </ul><br>
-
-<ul>
-    <h3>Reviews</h3>
-    <% if @order.service.reviews %>
-        <% @order.service.reviews.each do |review| %>
-            <%= "★" * review.rating %><%= "☆" * (5 - review.rating) %></li>
-            <li><%= review.content %></li><br>
-        <% end %>
-    <% end %>
-</ul>
