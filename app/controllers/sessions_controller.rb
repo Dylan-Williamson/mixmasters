@@ -14,11 +14,7 @@ class SessionsController < ApplicationController
       u.password = SecureRandom.hex
       u.name = omniauth['info']['name']
       u.save(:validate=> false)
-      # u.location = ""
-      # u.bio = ""
-      # u.rating = 0
     end
-    # byebug
     session[:user_id] = user.id
     redirect_to services_path
   end
