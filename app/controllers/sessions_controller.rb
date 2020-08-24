@@ -6,6 +6,22 @@ class SessionsController < ApplicationController
       redirect_to services_path
     end
   end
+  
+  def create_with_google_omniauth
+    omniauth = request.env['omniauth.auth']
+    user = User.find_or_create_by(email: omniauth['info']['email']) do |u|
+      u.username = omniauth['info']['email']
+      u.password = SecureRandom.hex
+      u.name = omniauth['info']['name']
+      u.save(:validate=> false)
+      # u.location = ""
+      # u.bio = ""
+      # u.rating = 0
+    end
+    # byebug
+    session[:user_id] = user.id
+    redirect_to services_path
+  end
 
   def create
     user = User.find_by(username: params[:username])
@@ -17,20 +33,9 @@ class SessionsController < ApplicationController
       redirect_to login_path
     end
   end
-
-  def destroy
-    session[:user_id] = nil
-    redirect_to login_path  
-  end
-
-  def create_with_google_omniauth
-    omniauth = request.env['omniauth.auth']
-      user = User.find_or_create_by(email: omniauth['info']['email']) do |u|
-        byebug
-        u.username = omniauth['info']['email']
-        u.password = SecureRandom.hex
-      end
-    session[:user_id] = user.id
-    redirect_to services_path
-  end
+  
+    def destroy
+      session[:user_id] = nil
+      redirect_to login_path  
+    end
 end
