@@ -1,5 +1,4 @@
-<h1>MixMasters Premier Audio Services</h1>
-<h3>Welcome <%= @current_user.username %></h3>
+<h1>Audio Services</h1>
 <dl>
     <% @services.order_by_price.each do |service| %>
         <dt>$<%= service.price %> <%= link_to service.title, service %> (<%= link_to "@"+service.user.username, service.user %>)</dt>
