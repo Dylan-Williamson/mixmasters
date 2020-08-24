@@ -29,11 +29,11 @@ class ServicesController < ApplicationController
     end
 
     def create
-        # byebug
+        params[:service][:user_id] = @current_user.id
         @service = Service.create(service_params)
         redirect_to @service
     end
-
+    
     def destroy
         @service.destroy
         redirect_to services_path
@@ -42,7 +42,6 @@ class ServicesController < ApplicationController
     private
 
     def service_params
-        params[:service][:user_id] = @current_user.id
         params.require(:service).permit(:title, :description, :requirements, :price, :user_id)
     end
 
