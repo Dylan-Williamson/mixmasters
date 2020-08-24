@@ -8,12 +8,15 @@ class ServicesController < ApplicationController
     end
 
     def index
-        @services = Service.all
-        render 'index'
-    end
+        if params[:service_id]
+          @services = User.find(params[:service_id]).services
+        else
+          @services = Service.all
+        end
+      end
 
     def show
-        render 'show'
+        @service = Service.find(params[:id])
     end
 
     def edit
