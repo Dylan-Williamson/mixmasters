@@ -1,6 +1,6 @@
 <h1>Order #<%= @order.id %></h1>
 
-<h1><%= @order.service.title %></h1>
+<h1><%= link_to @order.service.title, @order.service %></h1>
 
 <ul>
     <h3>Seller </h3>

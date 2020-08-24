@@ -29,6 +29,7 @@ class ServicesController < ApplicationController
     end
 
     def create
+        # byebug
         @service = Service.create(service_params)
         redirect_to @service
     end
@@ -41,7 +42,8 @@ class ServicesController < ApplicationController
     private
 
     def service_params
-        params.require(:service).permit(:title, :description, :requirements, :price)
+        params[:service][:user_id] = @current_user.id
+        params.require(:service).permit(:title, :description, :requirements, :price, :user_id)
     end
 
     def find_service
