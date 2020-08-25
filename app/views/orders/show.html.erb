@@ -1,4 +1,9 @@
 <h1>Order #<%= @order.id %></h1>
+<% if @order.review %>
+    <h2><%= '★'*@order.review[:rating] %><%= '☆'*(5 - @order.review[:rating]) %></h2>
+<% else %>
+    <%= link_to "Review Order", new_order_review_path %>
+<% end %>
 
 <h1><%= link_to @order.service.title, @order.service %></h1>
 
@@ -11,4 +16,5 @@
     <%= @order.service.description %><br><br>
     <h3>Buyer Requirements </h3>
     <%= @order.service.requirements %>
+    
 </ul><br>
