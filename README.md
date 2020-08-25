@@ -1,24 +1,21 @@
-# README
+# MixMasters
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+MixMasters is a p2p freelance platform targeted at mixing/mastering engineers and their respective clients, both current and future.
 
-Things you may want to cover:
+## Installation
 
-* Ruby version
+1. Fork and clone this repository
+2. Run 'bundle install' [terminal]
 
-* System dependencies
+## Usage
 
-* Configuration
+1. Run 'rails s' [terminal]
+2. In browser, navigate to http://localhost:3000/services
 
-* Database creation
+## Contributing
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
-* Database initialization
+Please make sure to update tests as appropriate.
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## License
+[MIT](https://choosealicense.com/licenses/mit/)
