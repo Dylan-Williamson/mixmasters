@@ -4,13 +4,17 @@ MixMasters is a p2p freelance platform targeted at mixing/mastering engineers an
 
 ## Installation
 
-1. Fork and clone this repository
-2. Run 'bundle install' [terminal]
+Run 'bundle install'
+```ruby
+bundle install
+```
 
 ## Usage
 
-1. Run 'rails s' [terminal]
-2. In browser, navigate to http://localhost:3000/services
+```ruby
+rails s
+```
+In browser, navigate to http://localhost:3000/services
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
