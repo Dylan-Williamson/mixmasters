@@ -1,7 +1,7 @@
 <h1><%= @service.title %> $<%= @service.price %></h1>
 
 <ul>
-    <h3><%= link_to "@"+@service.user.username, @service.user %></h3><br>
+    <h3><%= @service.user[:name] %> (<%= link_to "@"+@service.user[:username], @service.user %>)</h3><br>
     <h3>Description </h3>
     <%= @service.description %><br><br>
     <h3>Buyer Requirements </h3>
@@ -12,7 +12,7 @@
     <h3>Reviews (<%= @service.reviews.count %>)</h3>
     <% if @service.reviews %>
         <% @service.reviews.each do |review| %>
-            <%= "★" * review.rating %><%= "☆" * (5 - review.rating) %></li>
+            <%= "★" * review.rating %><%= "☆" * (5 - review.rating) %> (@<%= link_to review.user[:username], review.user %>)</li>
             <li><%= review.content %></li><br>
         <% end %>
     <% else %>
