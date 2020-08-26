@@ -23,15 +23,3 @@
 <% else %>
     <p>Nothing here yet!</p>
 <% end %>
-
-<h2>Orders (<%= @user.orders.count %>)</h2>
-<% if @user.orders.present? %>
-    <dl>
-        <% @user.orders.each do |order| %>
-            <dt><%= link_to order.service[:title], order %></dt>
-            <dd>-<%= order.service.price %></dd><br>
-        <% end %>
-    </dl>
-<% else %>
-    <p>No current orders<p>
-<% end %>
