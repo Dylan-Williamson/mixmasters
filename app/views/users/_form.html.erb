@@ -11,5 +11,5 @@
     <%= f.text_field :location %><br><br>
     <%= f.label :bio %><br>
     <%= f.text_area :bio %><br>
-    <%= f.submit %>
+    <%= f.submit @user.persisted? ? 'Save Changes' : 'Sign Up' %>
 <% end %>
