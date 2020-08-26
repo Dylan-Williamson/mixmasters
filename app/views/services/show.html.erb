@@ -9,12 +9,14 @@
 </ul><br>
 
 <ul>
-    <h3>Reviews</h3>
+    <h3>Reviews (<%= @service.reviews.count %>)</h3>
     <% if @service.reviews %>
         <% @service.reviews.each do |review| %>
             <%= "★" * review.rating %><%= "☆" * (5 - review.rating) %></li>
             <li><%= review.content %></li><br>
         <% end %>
+    <% else %>
+        <%= No Reviews %>
     <% end %>
 </ul>
 <%= link_to 'Edit Service', edit_service_path %>
