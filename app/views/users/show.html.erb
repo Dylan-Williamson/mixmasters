@@ -9,7 +9,7 @@
 <h3>Bio </h3>
 <p><%= @user.bio %></p>
 <%= link_to 'Edit Account', edit_user_path %>
-<%= button_to 'Delete Account', user_path, method: :delete %>
+<%= button_to 'Delete Account', user_path, method: :delete, data: {confirm: "Are you sure?"} %>
 
 <h2>Services (<%= @services.count %>)</h3>
 <% if @services.present? %>
