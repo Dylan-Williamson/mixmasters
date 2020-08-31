@@ -1,14 +1,22 @@
 body {
-    background-color: ivory;
+    background-color: black;
     text-align: center;
 }
 
 h1, h2, h3, h4, h5 {
-    color: black;
+    color: white;
+}
+
+dt {
+    color: aqua;
+}
+
+dd {
+    color: white;
 }
 
 a {
-    color: black; 
+    color: white; 
     text-decoration: none;
 }
 
