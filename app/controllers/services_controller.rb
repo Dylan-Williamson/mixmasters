@@ -1,5 +1,5 @@
 class ServicesController < ApplicationController
-    
+    load_and_authorize_resource
     before_action :find_service, only: [:show, :edit, :update, :destroy]
 
     def new
@@ -29,8 +29,9 @@ class ServicesController < ApplicationController
     end
 
     def create
-        params[:service][:user_id] = @current_user.id
         @service = Service.create(service_params)
+        # params[:service][:user_id] = @current_user.id
+        @service.user_id = current_user.id
         redirect_to @service
     end
     

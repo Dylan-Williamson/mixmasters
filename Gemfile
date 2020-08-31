@@ -28,6 +28,10 @@ gem 'dotenv-rails', groups: [:development, :test]
 # Use Google Omni-Auth 
 gem 'omniauth'
 gem 'omniauth-google-oauth2'
+
+# CanCan authorization
+gem 'cancancan'
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 

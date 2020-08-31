@@ -19,5 +19,8 @@
         <%= No Reviews %>
     <% end %>
 </ul>
-<%= link_to 'Edit Service', edit_service_path %>
-<%= button_to 'Delete', service_path, method: :delete, data: {confirm: "Are you sure?"} %>
+    
+<% if can? :update, @service %>
+    <%= link_to 'Edit Service', edit_service_path %>
+    <%= button_to 'Delete', service_path, method: :delete, data: {confirm: "Are you sure?"} %>
+<% end %>
