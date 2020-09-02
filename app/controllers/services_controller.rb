@@ -30,8 +30,7 @@ class ServicesController < ApplicationController
 
     def create
         @service = Service.create(service_params)
-        # params[:service][:user_id] = @current_user.id
-        @service.user_id = current_user.id
+        @service.update(user_id: current_user.id)
         redirect_to @service
     end
     

@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   resources :users, only: [:create, :edit, :update, :show, :destroy]
   resources :services 
   resources :orders, only: [:create, :update, :index, :show] do
-    resources :reviews, only: [:new, :create, :index]
+    resources :reviews, only: [:new, :create]
   end
   # resources :reviews, only: [:create]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

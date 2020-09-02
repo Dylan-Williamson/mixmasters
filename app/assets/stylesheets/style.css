@@ -1,31 +1,68 @@
 body {
     background-color: black;
     text-align: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+.nav_logo {
+    max-width: 5em;
+}
+
+label {
+    color: #DE5832;
+}
+
+input {
+    background-color: whitesmoke;
+}
+
+input[type='submit'] {
+    background-color: #DE5832;
+}
+
+input[type='submit']:hover {
+    zoom: 110%;
 }
 
 h1, h2, h3, h4, h5 {
-    color: white;
+    color: whitesmoke;
 }
+
+h3[type='rating'] {
+    color: yellow;
+}
+
 
 dt {
-    color: aqua;
-}
-
-dd {
-    color: white;
-}
-
-a {
-    color: white; 
-    text-decoration: none;
-}
-
-a:hover {
     color: green;
 }
 
-button {
+dd {
+    color: whitesmoke;
+}
 
+a {
+    color: whitesmoke; 
+    text-decoration: none;
+}
+
+li {
+    color: #DE5832;
+    list-style-type: none;
+}
+
+p {
+    color: #DE5832;
+}
+
+a:hover {
+    color: #DE5832;
+    text-decoration: none;
+}
+
+button {
+    color: #DE5832;
 }
 
 button a {
@@ -36,4 +73,4 @@ button a {
     display: grid;
     grid-template-columns: repeat(autofill, minmax(300px, 1fr));
     grid-gap: 1em;
-}
+} 

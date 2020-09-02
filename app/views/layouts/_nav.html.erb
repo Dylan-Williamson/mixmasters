@@ -1,6 +1,6 @@
 <% if logged_in? %>
 <h3>
-    <%= link_to "MixMasters", services_path %> | 
+    <%= link_to image_tag("https://i.ibb.co/GRKqnF0/mmlogo.png", :class => "nav_logo"), services_path %>  
     <%= link_to "Add Service", new_service_path %> | 
     <%= link_to "Orders", orders_path %> | 
     <%= link_to "Account", @current_user %> | 
