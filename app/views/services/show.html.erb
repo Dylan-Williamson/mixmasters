@@ -8,17 +8,7 @@
     <p><%= @service.requirements %></p>
 </ul><br>
 
-<ul>
-    <h3>Reviews (<%= @service.reviews.count %>)</h3>
-    <% if @service.reviews.present? %>
-        <% @service.reviews.each do |review| %>
-            <h3 type='rating'><%= "★" * review.rating %><%= "☆" * (5 - review.rating) %> (<%= link_to "@"+review.user[:username], review.user %>)</h3>
-            <li><%= review.content %></li><br>
-        <% end %>
-    <% else %>
-        <p>No Reviews</p>
-    <% end %>
-</ul>
+<h3><%= link_to "Reviews ("+ @service.reviews.count.to_s+")", service_reviews_path(@service, @reviews) %></h3>
     
 <% if can? :update, @service %>
     <%= link_to 'Edit Service', edit_service_path %>

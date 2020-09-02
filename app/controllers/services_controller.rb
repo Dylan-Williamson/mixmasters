@@ -16,7 +16,7 @@ class ServicesController < ApplicationController
       end
 
     def show
-        @service = Service.find(params[:id])
+        @service = Service.find_by(params[:id])
     end
 
     def edit

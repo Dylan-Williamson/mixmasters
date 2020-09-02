@@ -7,7 +7,7 @@ class ReviewsController < ApplicationController
 
     def index
         @service = Service.find_by(id: params[:service_id])
-        @reviews = Review.where(service_id: params[:service_id])
+        @reviews = Review.all.where(service_id: params[:service_id])
     end
 
     private
