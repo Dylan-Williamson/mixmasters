@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-    
+    load_and_authorize_resource
     skip_before_action :authorized, only: [:new, :create]
     before_action :find_user, only: [:show, :edit, :update, :destroy]
 

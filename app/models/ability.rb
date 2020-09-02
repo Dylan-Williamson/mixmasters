@@ -9,6 +9,7 @@ class Ability
         can :manage, :all
       else
         can :manage, Service, user_id: user.id
+        can :manage, User, id: user.id
         can :read, :all
       end
     # Define abilities for the passed in user here. For example:
