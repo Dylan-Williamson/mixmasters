@@ -5,7 +5,9 @@ Rails.application.routes.draw do
   delete '/sessions', to: "sessions#destroy"
   get 'auth/google_oauth2/callback', to: "sessions#create_with_google_omniauth"
   resources :users, only: [:create, :edit, :update, :show, :destroy]
-  resources :services 
+  resources :services do
+    resources :reviews, only: [:index]
+  end
   resources :orders, only: [:create, :update, :index, :show] do
     resources :reviews, only: [:new, :create]
   end
