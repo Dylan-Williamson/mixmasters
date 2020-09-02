@@ -5,21 +5,17 @@ class UsersController < ApplicationController
 
     def new
         @user = User.new
-        render 'new'
     end
     
     def index
         @user = User.all
-        render 'index'
     end
     
     def show
         @services = @user.services
-        render 'show'
     end
     
     def edit
-        render 'edit'
     end
 
     def update
