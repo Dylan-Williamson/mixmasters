@@ -4,23 +4,16 @@ class ServicesController < ApplicationController
 
     def new
         @service = Service.new
-        render 'new'
     end
 
     def index
-        if params[:service_id]
-          @services = User.find(params[:service_id]).services
-        else
-          @services = Service.all
-        end
-      end
+        @services = Service.all
+    end
 
     def show
-        @service = Service.find_by(params[:id])
     end
 
     def edit
-        render 'edit'
     end
 
     def update
