@@ -8,7 +8,9 @@
 </h5>
 <% else %>
 <h3>
-    <%= link_to "Log In", login_path %> | 
-    <%= link_to "Log In with Google", "/auth/google_oauth2" %>
+    <%= image_tag("https://i.ibb.co/GRKqnF0/mmlogo.png", :class => "nav_logo") %>
+    <%=%>
+    <%= link_to "Login", login_path %> | 
+    <%= link_to "Register", signup_path %> 
 </h3>
 <% end %>

@@ -1,9 +1,13 @@
-<h1>Log In</h1>
+<h1>Login</h1><br>
 
 <%= form_tag sessions_path do %>
     <%= label_tag :username %>
     <%= text_field_tag :username %><br><br>
     <%= label_tag :password %>
-    <%= password_field_tag :password %>
+    <%= password_field_tag :password %><br>
     <%= submit_tag "Login" %>
 <% end %>
+<a class="btn btn-outline-dark" href="/auth/google_oauth2" role="button" style="text-transform:none">
+    <img width="20px" style="margin-bottom:3px; margin-right:5px" alt="Google sign-in" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png" />
+    Login with Google
+</a>
