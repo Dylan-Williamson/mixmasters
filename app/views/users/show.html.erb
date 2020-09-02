@@ -12,7 +12,7 @@
     <%= link_to 'Edit Account', edit_user_path %>
     <%= button_to 'Delete Account', user_path, method: :delete, data: {confirm: "Are you sure?"} %>
 <% end %>
-<h2>Services (<%= @services.count %>)</h3>
+<h2>Services (<%= @services.count %>)</h2>
 <% if @services.present? %>
     <dl>
         <% @services.each do |service| %>
@@ -22,5 +22,5 @@
 
     </dl>
 <% else %>
-    <%= link_to "Add Service", new_service_path %>
+    <p>Nothing Here Yet!</p>
 <% end %>
