@@ -1,1 +1,12 @@
-<h1>Hello World</h1>
+<h1><%= link_to @service.title, @service %></h1>
+<ul>
+    <h3>Reviews </h3>
+    <% if @reviews.present? %>
+        <% @reviews.each do |review| %>
+            <h3 type='rating'><%= "★" * review.rating %><%= "☆" * (5 - review.rating) %> (<%= link_to "@"+review.user[:username], review.user %>)</h3>
+            <li><%= review.content %></li><br>
+        <% end %>
+    <% else %>
+        <p>No Reviews</p>
+    <% end %>
+</ul>

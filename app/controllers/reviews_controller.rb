@@ -1,12 +1,13 @@
 class ReviewsController < ApplicationController
 
     def create
-        review = @current_user.reviews.create(review_params)
+        @review = @current_user.reviews.create(review_params)
         redirect_to review.order
     end
 
     def index
-        reviews = Review.where(service_id: params[:service_id])
+        @service = Service.find_by(id: params[:service_id])
+        @reviews = Review.where(service_id: params[:service_id])
     end
 
     private
