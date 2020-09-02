@@ -5,6 +5,10 @@ class ReviewsController < ApplicationController
         redirect_to review.order
     end
 
+    def index
+        reviews = Review.where(service_id: params[:service_id])
+    end
+
     private
     
     def review_params
