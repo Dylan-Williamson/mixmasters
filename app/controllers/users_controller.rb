@@ -19,8 +19,14 @@ class UsersController < ApplicationController
     end
 
     def update
-        @user.update(user_params)
-        redirect_to @user
+        
+        if @user.update(user_params) == true
+            @user.save
+            redirect_to @user
+        else
+            flash[:errors] = @user.errors.full_messages
+            redirect_back(fallback_location: @user)
+        end
     end
 
     def create
