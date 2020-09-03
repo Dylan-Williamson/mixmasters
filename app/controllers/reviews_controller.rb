@@ -4,6 +4,7 @@ class ReviewsController < ApplicationController
     def new
         @review = Review.new
     end
+    
     def create
         @review = current_user.reviews.create(review_params)
         @review.service_id = @order.service_id
