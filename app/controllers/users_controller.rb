@@ -28,6 +28,7 @@ class UsersController < ApplicationController
             redirect_back(fallback_location: @user)
         end
     end
+    
 
     def create
         @user = User.new(user_params)

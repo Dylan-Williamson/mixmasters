@@ -9,14 +9,26 @@ class OrdersController < ApplicationController
     def create
         @order = Order.create(order_params)
         @order.user_id = current_user.id
-        @order.update(service_id: @service.id)
-        redirect_to @order
+        @order.service_id = @service.id
+        if @order.valid?
+            @order.save
+            redirect_to @order
+        else
+            flash[:errors] = @order.errors.full_messages
+            redirect_back(fallback_location: @order)
+        end
     end
 
     def update
-        @order.update(order_params)
-        redirect_to @order
+        if @order.update(order_params) == true
+            @order.save
+            redirect_to @order
+        else
+            flash[:errors] = @order.errors.full_messages
+            redirect_back(fallback_location: @order)
+        end
     end
+
 
     def index
         @orders = Order.where(user_id: current_user.id)
