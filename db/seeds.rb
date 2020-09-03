@@ -17,11 +17,11 @@ Service.create(title: "Cruelty-Free Mixing", description: "Amateur mixing using 
 Service.create(title: "Judgemental Mixing + Mastering", description: "I'll both mix AND master your project, but not without giving my opinion anywhere it isn't needed.", price: 500, requirements: "Just send it. I don't care how, just do it.", user_id: 4)
 Service.create(title: "Ultimate Mastering", description: "I assure you I will boost every frequency known to man. ", price: 200, requirements: "WAV, 16bit only.", user_id: 5)
 #Orders
-Order.create(user_id: 6, service_id: 1)
-Order.create(user_id: 7, service_id: 2)
-Order.create(user_id: 8, service_id: 3)
-Order.create(user_id: 9, service_id: 4)
-Order.create(user_id: 10, service_id: 5)
+Order.create(email: "random@gmail.com", user_id: 6, service_id: 1)
+Order.create(email: "random@gmail.com", user_id: 7, service_id: 2)
+Order.create(email: "random@gmail.com", user_id: 8, service_id: 3)
+Order.create(email: "random@gmail.com", user_id: 9, service_id: 4)
+Order.create(email: "random@gmail.com", user_id: 10, service_id: 5)
 #Reviews
 Review.create(user_id: 6, service_id: 1, order_id: 1, content: "Absolutely Great Service! 10/10 I will certainly be back again!", rating: 5)
 Review.create(user_id: 7, service_id: 2, order_id: 2, content: "Sounds great but terrible username.", rating: 2)
