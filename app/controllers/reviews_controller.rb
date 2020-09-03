@@ -7,13 +7,20 @@ class ReviewsController < ApplicationController
     def create
         @review = current_user.reviews.create(review_params)
         @review.service_id = @order.service_id
-        @review.update(order_id: @order.id)
-        redirect_to @review.order
+        @review.order_id = @order.id
+        if @review.valid?
+            @review.save
+            redirect_to @order
+        else
+            flash[:errors] = @review.errors.full_messages
+            redirect_back(fallback_location: @order)
+        end
     end
 
     def index
         @reviews = Review.all.where(service_id: params[:service_id])
     end
+
     
     private
     
