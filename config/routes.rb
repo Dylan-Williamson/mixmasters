@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get 'auth/google_oauth2/callback', to: "sessions#create_with_google_omniauth"
   resources :users, only: [:create, :edit, :update, :show, :destroy]
   resources :services do
+    resources :orders, only: [:new]
     resources :reviews, only: [:index]
   end
   resources :orders, only: [:create, :update, :index, :show] do

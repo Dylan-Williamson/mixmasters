@@ -8,9 +8,11 @@
     <p><%= @service.requirements %></p>
 </ul><br>
 
-<h3><%= link_to "Reviews ("+ @service.reviews.count.to_s+")", service_reviews_path(@service, @reviews) %></h3>
+<h3><%= link_to "Reviews ("+ @service.reviews.count.to_s+")", service_reviews_path(@service, @reviews) %></h3><br>
     
 <% if can? :update, @service %>
     <%= link_to 'Edit Service', edit_service_path %>
     <%= button_to 'Delete', service_path, method: :delete, data: {confirm: "Are you sure?"} %>
+<% else %>
+    <%= link_to 'Order', new_service_order_path(@service, @order), {:class => "order-link"}%>
 <% end %>

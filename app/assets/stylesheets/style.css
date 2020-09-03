@@ -28,10 +28,6 @@ input[type='submit']:hover {
     zoom: 110%;
 }
 
-.alert.error {
-    color: red;
-}
-
 h1, h2, h3, h4, h5 {
     color: whitesmoke;
 }
@@ -40,6 +36,21 @@ h3[type='rating'] {
     color: yellow;
 }
 
+a[class="order-link"] {
+    font-size: 40px;
+    color: ivory;
+    background-color: #DE5832;
+    padding: 2px 25px 2px 25px;
+    border-top: 1px solid white;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+    border-left: 1px solid white;
+}
+
+a[class="order-link"]:hover {
+    zoom: 105%;
+    color: black;
+}
 
 dt {
     color: green;

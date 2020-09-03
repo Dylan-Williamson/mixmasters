@@ -1,6 +1,10 @@
 class OrdersController < ApplicationController
     before_action :find_order, only: [:show, :update]
 
+    def new
+        @order = Order.new
+    end
+
     def create
         @order = Order.create(order_params)
     end
