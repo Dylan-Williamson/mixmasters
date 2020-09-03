@@ -1,15 +1,15 @@
-<h1>Order #<%= @order.id %></h1>
+<h1>Order #<%= @order.id %></h1><br>
+<h2><%= link_to @order.service.title, @order.service %></h2><br>
 <% if @order.review %>
     <h3 type="rating"><%= '★'*@order.review[:rating] %><%= '☆'*(5 - @order.review[:rating]) %></h2>
 <% else %>
-    <%= link_to "Review Order", new_order_review_path(@order, @review) %>
+    <%= link_to "Review Order", new_order_review_path(@order, @review), {:class => "order-link"} %>
 <% end %>
 
-<h1><%= link_to @order.service.title, @order.service %></h1>
 
-<ul>
+<ul><br>
     <h3>Seller </h3>
-    <li><%= link_to "@"+@order.service.user.username, @order.service.user %></li><br><br>
+    <li><%= link_to "@"+@order.service.user.username, @order.service.user %></li><br>
     <h3>Cost </h3>
     <li>$<%= @order.service.price %></li><br>
     <h3>Description </h3>
