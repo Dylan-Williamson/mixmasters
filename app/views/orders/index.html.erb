@@ -1,10 +1,14 @@
-<h1>Order History</h1>
+<h1>Order History</h1><br>
 
+<% if @orders.present? %>
+    <dl>
+        <% @orders.each do |order| %>
+            <dt>$<%= order.service[:price] %> <%= link_to order.service[:title], order %></dt>
+            <dd>-<%= order.service[:description] %></dd><br>
+        <% end %>
 
-<dl>
-    <% @orders.each do |order| %>
-        <dt>$<%= order.service[:price] %> <%= link_to order.service[:title], order %></dt>
-        <dd>-<%= order.service[:description] %></dd><br>
-    <% end %>
-
-</dl>
+    </dl>
+<% else %>
+    <h3>No Current or Past Orders</h3><br>
+    <%= link_to "Browse Services", services_path, {:class => "order-link"} %>
+<% end %>
