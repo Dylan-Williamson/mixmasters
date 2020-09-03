@@ -1,0 +1,9 @@
+<h1>New Purchase</h1><br>
+
+<h3>Enter Contact Info To Place Order</h3>
+
+<%= form_for [@service, @order] do |f| %>
+    <%= f.label :email %><br>
+    <%= f.text_field :email %><br><br>
+    <%= f.submit "Purchase"%>
+<% end %>

@@ -4,7 +4,7 @@ class User < ApplicationRecord
     validates :username, length: {maximum: 320}
 
     has_many :services
-    has_many :orders
+    has_many :orders, through: :services
     has_many :reviews, through: :orders
     has_secure_password
     scope :order_by_rating, -> {order(:rating)}

@@ -2,7 +2,7 @@
 <% if @order.review %>
     <h2><%= '⭐️'*@order.review[:rating] %><%= '☆'*(5 - @order.review[:rating]) %></h2>
 <% else %>
-    <%= link_to "Review Order", new_order_review_path %>
+    <%= link_to "Review Order", new_order_review_path(@order, @review) %>
 <% end %>
 
 <h1><%= link_to @order.service.title, @order.service %></h1>
