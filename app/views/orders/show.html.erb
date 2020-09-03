@@ -8,13 +8,17 @@
 
 
 <ul><br>
-    <h3>Seller </h3>
+    <% if @order.review %>
+        <h3>Review</h3>
+        <li><%= @order.review[:content] %></li><br>
+    <% end %>
+    <h3>Seller</h3>
     <li><%= link_to "@"+@order.service.user.username, @order.service.user %></li><br>
-    <h3>Cost </h3>
+    <h3>Cost</h3>
     <li>$<%= @order.service.price %></li><br>
-    <h3>Description </h3>
+    <h3>Description</h3>
     <li><%= @order.service.description %></li><br>
-    <h3>Buyer Requirements </h3>
+    <h3>Buyer Requirements</h3>
     <li><%= @order.service.requirements %></li>
     
 </ul><br>
