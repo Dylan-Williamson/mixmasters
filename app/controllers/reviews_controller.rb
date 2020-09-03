@@ -1,6 +1,6 @@
 class ReviewsController < ApplicationController
-    before_action :find_order, only: [:new, :create, :index]
-    
+    before_action :find_order, only: [:new, :create]
+    before_action :find_service, only: [:index]
     def new
         @review = Review.new
     end
@@ -23,5 +23,9 @@ class ReviewsController < ApplicationController
     
     def find_order
         @order = Order.find_by_id(params[:order_id])
+    end
+
+    def find_service
+        @service = Service.find_by_id(params[:service_id])
     end
 end

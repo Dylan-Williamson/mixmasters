@@ -1,4 +1,4 @@
-<h1><%= link_to @service.title, @service %></h1>
+<h1><%= link_to @service[:title], @service %></h1>
 <ul>
     <h3>Reviews (<%= @reviews.count %>)</h3>
     <% if @reviews.present? %>
