@@ -1,6 +1,7 @@
 class OrdersController < ApplicationController
     before_action :find_order, only: [:show, :update]
     before_action :find_service, only: [:new, :create]
+    
     def new
         @order = Order.new
     end
@@ -18,7 +19,7 @@ class OrdersController < ApplicationController
     end
 
     def index
-        @orders = Order.all
+        @orders = Order.where(user_id: current_user.id)
         render 'index'
     end
 
