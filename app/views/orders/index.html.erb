@@ -3,7 +3,12 @@
 <% if @orders.present? %>
     <dl>
         <% @orders.each do |order| %>
-            <dt>$<%= order.service[:price] %> <%= link_to order.service[:title], order %></dt>
+            <dt>$<%= order.service[:price] %> <%= link_to order.service[:title], order %> 
+            <% if order.review %>
+                <%= "★"*order.review[:rating] %><%= "☆"*(5-order.review[:rating]) %></dt>
+            <% else %>
+                </dt>
+            <% end %>
             <dd>-<%= order.service[:description] %></dd><br>
         <% end %>
 
