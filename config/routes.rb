@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get '/', to: 'services#index', as: "/services"
   get '/login', to: "sessions#new", as: "/login"
   get '/signup', to: "users#new", as: "/signup"
   post '/sessions', to: "sessions#create", as: "sessions"

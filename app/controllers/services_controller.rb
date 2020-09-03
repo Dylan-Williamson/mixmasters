@@ -10,6 +10,7 @@ class ServicesController < ApplicationController
         @services = Service.all
     end
 
+
     def show
     end
 
@@ -17,14 +18,25 @@ class ServicesController < ApplicationController
     end
 
     def update
-        @service.update(service_params)
-        redirect_to @service
+        if @service.update(service_params) == true
+            @service.save
+            redirect_to @service
+        else
+            flash[:errors] = @service.errors.full_messages
+            redirect_back(fallback_location: @service)
+        end
     end
 
     def create
         @service = Service.create(service_params)
-        @service.update(user_id: current_user.id)
-        redirect_to @service
+        @service.user_id = current_user.id
+        if @service.valid?
+            @service.save
+            redirect_to @service
+        else
+            flash[:errors] = @service.errors.full_messages
+            redirect_back(fallback_location: @service)
+        end
     end
     
     def destroy
