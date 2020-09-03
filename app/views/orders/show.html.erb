@@ -1,6 +1,6 @@
 <h1>Order #<%= @order.id %></h1>
 <% if @order.review %>
-    <h2><%= '★'*@order.review[:rating] %><%= '☆'*(5 - @order.review[:rating]) %></h2>
+    <h3 type="rating"><%= '★'*@order.review[:rating] %><%= '☆'*(5 - @order.review[:rating]) %></h2>
 <% else %>
     <%= link_to "Review Order", new_order_review_path(@order, @review) %>
 <% end %>
@@ -9,12 +9,12 @@
 
 <ul>
     <h3>Seller </h3>
-    <%= link_to "@"+@order.service.user.username, @order.service.user %><br><br>
+    <li><%= link_to "@"+@order.service.user.username, @order.service.user %></li><br><br>
     <h3>Cost </h3>
-    $<%= @order.service.price %><br><br>
+    <li>$<%= @order.service.price %></li><br>
     <h3>Description </h3>
-    <%= @order.service.description %><br><br>
+    <li><%= @order.service.description %></li><br>
     <h3>Buyer Requirements </h3>
-    <%= @order.service.requirements %>
+    <li><%= @order.service.requirements %></li>
     
 </ul><br>
