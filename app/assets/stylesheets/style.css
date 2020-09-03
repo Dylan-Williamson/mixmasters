@@ -28,6 +28,10 @@ input[type='submit']:hover {
     zoom: 110%;
 }
 
+.alert.error {
+    color: red;
+}
+
 h1, h2, h3, h4, h5 {
     color: whitesmoke;
 }

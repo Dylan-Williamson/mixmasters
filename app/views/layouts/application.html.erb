@@ -17,6 +17,7 @@
   </head>
 
   <body>
+  <%= render 'layouts/nav' %>
   <% if flash[:errors] %>
   <ul style="color: red;">
     <% flash[:errors].each do |error| %>
@@ -24,7 +25,6 @@
     <% end %>
   </ul>
   <% end %>
-    <%= render 'layouts/nav' %>
     <%= yield %>
   </body>
 </html>

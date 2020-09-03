@@ -24,9 +24,17 @@ class UsersController < ApplicationController
     end
 
     def create
-        @user = User.create(user_params)
-        session[:user_id] = @user.id
-        redirect_to @user
+        @user = User.new(user_params)
+
+        if @user.valid?
+            @user.save
+            flash[:notice] = "Registration was successful!"
+            session[:user_id] = @user.id
+            redirect_to @user
+        else
+            flash[:errors] = @user.errors.full_messages
+            redirect_back(fallback_location: signup_path)
+        end
     end
 
     def destroy
